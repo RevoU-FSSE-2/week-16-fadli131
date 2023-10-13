@@ -9,7 +9,7 @@
 👤 **Fadli Aryadinata**
 
 - GitHub: [@fadli131](https://github.com/fadli131)
-- Deployment link : https://light-earmuffs-dog.cyclic.app/api-docs/ 
+- Swagger API : http://localhost:3000/api-docs/
 
 ### Language used 
 - Javascript (NodeJS & ExpressJS)

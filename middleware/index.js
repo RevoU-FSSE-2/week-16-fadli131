@@ -1,5 +1,5 @@
 const applyHelmet = require('./helmet');
-const applyBodyParser = require('./bodyParser');
+const applyBodyParser = require('./bodyparser');
 const applyMorgan = require('./morgan');
 const applyAuth = require('./auth');
 const applyCookieParser = require('./cookieparser');

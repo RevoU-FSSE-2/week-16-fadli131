@@ -9,6 +9,7 @@
 👤 **Fadli Aryadinata**
 
 - GitHub: [@fadli131](https://github.com/fadli131)
+- Deployment link : https://light-earmuffs-dog.cyclic.app/api-docs/ 
 
 ### Language used 
 - Javascript (NodeJS & ExpressJS)
@@ -18,25 +19,34 @@
 - Git and Github    
 - Postman
 - MongoDB (NoSQL Database)
+- Swagger API
 
 ## Getting Started 
 
 ### Regist Account
 
-**POST**/auth/register
+**POST** /register
 ```
 {
-  "username": "maker1",
-  "role": "maker",
-  "password": "Password123"
+  "username": "fadli",
+  "email": "fadli",
+  "password": "fadli"
 }
 ```
 ### Login Account
 
-**POST**/auth/login
+**POST** /login
 ```
 {
-  "username": "fadli12345678",
-  "password": "Fadli12345678"
+  "username": "fadli",
+  "password": "fadli"
+}
+```
+### Refresh Token
+
+**POST** /refresh
+```
+{
+  "refreshToken": "token"
 }
 ```

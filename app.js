@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
 const { loginLimiter } = require('./middleware/ratelimit');
 const yaml = require("js-yaml");
 const fs = require("fs");
+const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const { OpenApiValidator } = require('express-openapi-validator');
 
@@ -33,6 +34,9 @@ app.get('/', (req, res) => {
 });
 
 app.use("/post", postrouter);
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 

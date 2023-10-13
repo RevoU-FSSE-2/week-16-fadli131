@@ -1,0 +1,191 @@
+openapi: 3.0.0
+info:
+  title: Nama Proyek Anda
+  description: Deskripsi Proyek Anda
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local server
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+paths:
+
+  /post:
+    post:
+      summary: Membuat Posting Baru
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+      responses:
+        '200':
+          description: Posting berhasil dibuat
+
+  /requestreset:
+    post:
+      summary: Permintaan Reset Kata Sandi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                permission:
+                  type: string
+      responses:
+        '200':
+          description: Permintaan reset berhasil
+
+  /reset:
+    post:
+      summary: Reset Kata Sandi
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                permission:
+                  type: string
+      responses:
+        '200':
+          description: Reset kata sandi berhasil
+
+  /detachperm:
+    post:
+      summary: Melepaskan Izin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                permission:
+                  type: string
+      responses:
+        '200':
+          description: Melepaskan izin berhasil
+
+  /attachperm:
+    post:
+      summary: Melampirkan Izin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                permission:
+                  type: string
+      responses:
+        '200':
+          description: Melampirkan izin berhasil
+
+  /refresh:
+    post:
+      summary: Menyegarkan Token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refreshToken:
+                  type: string
+      responses:
+        '200':
+          description: Token berhasil disegarkan
+
+  /login:
+    post:
+      summary: Masuk
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Berhasil masuk
+
+  /login_session:
+    post:
+      summary: Masuk (Sesi)
+      responses:
+        '200':
+          description: Berhasil masuk (sesi)
+
+  /logout_session:
+    post:
+      summary: Keluar (Sesi)
+      responses:
+        '200':
+          description: Berhasil keluar (sesi)
+
+  /adminuser:
+    get:
+      summary: Mendapatkan Data Admin Pengguna
+      responses:
+        '200':
+          description: Data admin pengguna berhasil didapatkan
+
+  /register:
+    post:
+      summary: Membuat Pengguna Baru
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  default: 'fadli'
+                email:
+                  type: string
+                  default: 'fadli@gmail.com'
+                password:
+                  type: string
+                  default: 'fadli'
+      responses:
+        '201':
+          description: Pengguna baru berhasil dibuat
+
+  /user:
+    get:
+      summary: Mendapatkan Data Pengguna
+      responses:
+        '200':
+          description: Data pengguna berhasil didapatkan
